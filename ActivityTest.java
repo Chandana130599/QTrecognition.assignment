@@ -8,20 +8,21 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import pageObject.LoginPage;
+import pageObjects.LoginPage;
 import resources.Base;
 
-public class Activity extends Base{
+public class ActivityTest extends Base{
 	public WebDriver driver;
 	@BeforeTest
 	public void initialize() throws IOException
 	{
 		 driver =initializeDriver();
+		 driver.get("https://qtrecognition.testqtwiz.com/");
 	}
 	@Test
 	public void ActivityPage(){
 		
-		driver.get(prop.getProperty("url"));
+		
 		LoginPage lp = new LoginPage(driver);
 		lp.getUsername().sendKeys("chandana.rm@qualitestgroup.com");
 		lp.getPassword().sendKeys("P@ssw0rd");
