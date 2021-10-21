@@ -34,7 +34,7 @@ import resources.Base;
 			aP.clickKudosSearch().click();
 			
 			KudosSearchPage ksp = new KudosSearchPage(driver);
-			ksp.getEmail().sendKeys("anupam k");
+			ksp.getEmail().sendKeys("ananya");
 			driver.findElement(By.xpath("//input[@id='s_e_add']")).sendKeys(Keys.ARROW_DOWN,Keys.RETURN);
 			driver.findElement(By.xpath("//input[@id='s_e_add']")).sendKeys(Keys.ENTER,Keys.RETURN);
 			
