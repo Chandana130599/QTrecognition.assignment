@@ -11,21 +11,22 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import pageObject.LoginPage;
+import pageObjects.LoginPage;
 import resources.Base;
 
-public class Login extends Base{
+public class LoginTest extends Base{
 	public WebDriver driver;
 	@BeforeTest
 	public void initialize() throws IOException
 	{
 
 		 driver =initializeDriver();
+		 driver.get("https://qtrecognition.testqtwiz.com/");
 	}
 	
 	@Test
 	public void userLogin() {
-		driver.get(prop.getProperty("url"));
+		
 //Checking Gold Color
 		String colourGold = driver.findElement(By.xpath("//div[@class='myHeading']")).getCssValue("background-color");
 		String c = Color.fromString(colourGold).asHex(); 
