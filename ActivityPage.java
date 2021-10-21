@@ -1,4 +1,4 @@
-package pageObject;
+package pageObjects;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -11,7 +11,7 @@ public WebDriver driver;
 	By kudosFromMe = By.xpath("/html/body/div[1]/div[1]/div[1]/div/div[3]/div/h5/a/span");
 	By kudosToMe = By.xpath("/html/body/div[1]/div[1]/div[1]/div/div[4]/div/h5/a/span");
 	By activity = By.xpath("/html/body/div[1]/div[1]/div[1]/div/div[2]/div/h5/a/span");
-	By recentKudos = By.xpath("//*[@id=\"contact_list\"]/div[1]/div/h5/small/a/i");
+	By recentKudos = By.xpath("//*[@id=\"contact_list\"]/div/div/h5/small/a");
 	
 	public ActivityPage(WebDriver driver) {	
 		this.driver=driver;
@@ -27,3 +27,4 @@ public WebDriver driver;
 	}
 	
 }
+
