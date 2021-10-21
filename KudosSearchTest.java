@@ -1,5 +1,6 @@
 package assignment.QTRecognition;
 
+
 import java.io.IOException;
 
 import org.openqa.selenium.By;
@@ -9,22 +10,23 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import pageObject.ActivityPage;
-import pageObject.KudosSearchPage;
-import pageObject.LoginPage;
+import pageObjects.ActivityPage;
+import pageObjects.KudosSearchPage;
+import pageObjects.LoginPage;
 import resources.Base;
 
-	public class KudosSearch extends Base {
+	public class KudosSearchTest extends Base {
 		public WebDriver driver;
 		@BeforeTest
 		public void initialize() throws IOException
 		{
 			 driver =initializeDriver();
+			 driver.get("https://qtrecognition.testqtwiz.com/");
 		}
 		@Test
-		public void sendKudos(){
+		public void sendKudos() throws InterruptedException{
 			
-			driver.get(prop.getProperty("url"));
+			
 			LoginPage lp = new LoginPage(driver);
 			lp.getUsername().sendKeys("chandana.rm@qualitestgroup.com");
 			lp.getPassword().sendKeys("P@ssw0rd");
@@ -32,12 +34,10 @@ import resources.Base;
 			
 			ActivityPage aP = new ActivityPage(driver);
 			aP.clickKudosSearch().click();
-			
+			Thread.sleep(3000);
 			KudosSearchPage ksp = new KudosSearchPage(driver);
-			ksp.getEmail().sendKeys("ananya");
-			driver.findElement(By.xpath("//input[@id='s_e_add']")).sendKeys(Keys.ARROW_DOWN,Keys.RETURN);
-			driver.findElement(By.xpath("//input[@id='s_e_add']")).sendKeys(Keys.ENTER,Keys.RETURN);
-			
+			ksp.getEmail().sendKeys("Ashwini M Koppad (ashwini.koppad@qualitestgroup.com)");
+			Thread.sleep(3000);
 			ksp.ClickSearch().click();
 		}
 		
@@ -48,3 +48,5 @@ import resources.Base;
 		}
 
 }
+
+
